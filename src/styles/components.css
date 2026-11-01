@@ -1,0 +1,171 @@
+/* ---------- Buttons (20px radius, 1px border, no shadow) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border: 1px solid var(--color-hillside-ink);
+  border-radius: var(--radius-buttons);
+  font-size: var(--text-body);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-body);
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .3s var(--ease-out), color .3s var(--ease-out), border-color .3s var(--ease-out);
+}
+.btn--sm { padding: 12px 20px; font-size: var(--text-caption); }
+
+/* Pill Action Button (Filled Black) */
+.btn--ink { background: var(--color-hillside-ink); color: var(--color-meadow-cream); }
+.btn--ink:hover { background: var(--color-drone-violet); border-color: var(--color-drone-violet); }
+
+/* Ghost Outline Button */
+.btn--ghost { background: transparent; color: var(--color-hillside-ink); }
+.btn--ghost:hover { background: var(--color-hillside-ink); color: var(--color-meadow-cream); }
+
+.btn--ghost-light {
+  background: transparent;
+  color: var(--color-meadow-cream);
+  border-color: var(--color-meadow-cream);
+}
+.btn--ghost-light:hover { background: var(--color-meadow-cream); color: var(--color-hillside-ink); }
+
+.btn--cream {
+  background: var(--color-meadow-cream);
+  color: var(--color-hillside-ink);
+  border-color: var(--color-meadow-cream);
+}
+.btn--cream:hover { background: var(--color-drone-violet); border-color: var(--color-drone-violet); color: var(--color-meadow-cream); }
+
+/* Violet surface CTA (violet as a surface, never as text) */
+.btn--violet {
+  background: var(--color-drone-violet);
+  border-color: var(--color-drone-violet);
+  color: var(--color-meadow-cream);
+}
+.btn--violet:hover { background: var(--color-hillside-ink); border-color: var(--color-hillside-ink); }
+
+/* ---------- Tags ---------- */
+.tag {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-tags);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--tracking-caption);
+  text-transform: uppercase;
+}
+.tag--light { color: var(--color-meadow-cream); }
+
+/* ---------- Cards ---------- */
+.card {
+  padding: var(--card-padding);
+  border-radius: var(--radius-cards);
+}
+.card--outline {
+  background: var(--color-meadow-cream);
+  border: 1px solid var(--color-hillside-ink);
+}
+.card--violet {
+  background: var(--color-drone-violet);
+  color: var(--color-meadow-cream);
+}
+
+.checklist { display: grid; gap: 12px; margin-top: 24px; }
+.checklist li {
+  position: relative;
+  padding-left: 28px;
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body-lg);
+}
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0.35em;
+  width: 14px; height: 8px;
+  border-left: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(-45deg);
+}
+.checklist--x li::before,
+.checklist--x li::after {
+  content: "";
+  position: absolute;
+  left: 2px; top: 0.7em;
+  width: 14px; height: 2px;
+  border: 0;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.checklist--x li::after { transform: rotate(-45deg); }
+
+/* ---------- Photo card (stats / winter) ---------- */
+.photo-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-cards);
+  overflow: hidden;
+  color: var(--color-meadow-cream);
+}
+.photo-card > .media { position: absolute; inset: 0; border-radius: inherit; }
+.photo-card > .media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0) 55%);
+}
+.photo-card__text {
+  position: absolute;
+  left: var(--card-padding);
+  right: var(--card-padding);
+  bottom: var(--card-padding);
+  z-index: 2;
+}
+.photo-card__num {
+  display: block;
+  margin-bottom: 12px;
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-semibold);
+}
+.photo-card__text .caption { margin-top: 12px; }
+.photo-card__label {
+  margin-top: 8px;
+  font-size: var(--text-subheading);
+  line-height: var(--leading-subheading);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--tracking-subheading);
+}
+.photo-card .media img { transition: transform .8s var(--ease-out); }
+.photo-card:hover .media img { transform: scale(1.04); }
+
+/* ---------- Inline thumbnail token (image as a word) ---------- */
+.token {
+  display: inline-block;
+  width: 1.5em;
+  height: 0.78em;
+  vertical-align: -0.02em;
+  border-radius: var(--radius-images);
+}
+
+/* ---------- Progress dashes ---------- */
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.progress li {
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--color-stone-border);
+  transition: height .5s var(--ease-out), background-color .5s var(--ease-out);
+}
+.progress li.is-active { height: 64px; background: var(--color-hillside-ink); }
+.progress li.is-done { background: var(--color-hillside-ink); }
+.progress--light li { background: rgba(247, 244, 232, .3); }
+.progress--light li.is-active,
+.progress--light li.is-done { background: var(--color-meadow-cream); }
