@@ -84,3 +84,20 @@
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* Phones: 0.85 leading makes stacked caps touch, so open it up.
+   Albanian needs a little more for Ë/Ç marks above and below the caps. */
+@media (max-width: 899px) {
+  :root {
+    --leading-display: 1;
+    --leading-heading-lg: 1;
+    --leading-heading: 1;
+    --leading-heading-sm: 1;
+  }
+  :root:lang(sq) {
+    --leading-display: 1.08;
+    --leading-heading-lg: 1.08;
+    --leading-heading: 1.08;
+    --leading-heading-sm: 1.08;
+  }
+}

@@ -566,3 +566,14 @@
   .footer__bottom { grid-template-columns: auto 1fr auto; }
   .footer__nav { justify-content: center; }
 }
+
+/* =================== PHONE TWEAKS =================== */
+@media (max-width: 599px) {
+  .mobile-menu nav { gap: 8px; }
+  .mobile-menu nav a { line-height: 1.08; }
+  .dest-item__card { aspect-ratio: 4 / 5; }
+  .dest-item__name { margin-top: 4px; }
+  .photo-card__label { margin-top: 12px; }
+  .step { min-height: 0; }
+  .step__num { margin-bottom: 32px; }
+}
