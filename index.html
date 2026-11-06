@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title data-i18n="meta.title">Roundtrip Albania — Private tours, transfers & group trips</title>
   <meta name="description" data-i18n-attr="content:meta.description" content="Your local travel partner across Albania and the Balkans. Private and shared tours, comfortable transfers and group trips for 6–26 people." />
   <meta name="theme-color" content="#f7f4e8" />
@@ -107,7 +107,10 @@
     <section class="hero" id="top" data-header="dark">
       <div class="hero__media media media--dark" data-label="hero">
         <!-- Swap for <video autoplay muted loop playsinline poster="/media/hero.jpg"><source src="/media/hero.mp4"></video> when footage exists -->
-          <img src="https://images.unsplash.com/photo-1738675326308-f4097c3405a7?auto=format&fit=crop&w=2000&q=80" alt="" fetchpriority="high" />
+          <picture>
+            <source media="(max-width: 699px)" srcset="https://images.unsplash.com/photo-1738675326308-f4097c3405a7?auto=format&fit=crop&w=828&h=1800&q=70" />
+            <img src="https://images.unsplash.com/photo-1738675326308-f4097c3405a7?auto=format&fit=crop&w=2000&q=80" alt="" fetchpriority="high" />
+          </picture>
       </div>
       <div class="hero__shade" aria-hidden="true"></div>
       <div class="hero__content">
@@ -126,11 +129,12 @@
     <section class="journey" id="tours" data-header="light">
       <div class="journey__stage" data-journey-stage>
         <div class="journey__intro" data-journey-intro>
+          <div class="journey__sticky">
           <h2 class="journey__text heading-lg">
             <span class="jl"><span data-split data-i18n="journey.l1">Travel that</span></span>
             <span class="jl jl--indent">
               <span class="token media" data-label="services-private.jpg" data-journey-token aria-hidden="true">
-                <img src="https://images.unsplash.com/photo-1729455262359-eaf83834808b?auto=format&fit=crop&w=1400&q=80" alt="" />
+                <img src="https://images.unsplash.com/photo-1729455262359-eaf83834808b?auto=format&fit=crop&w=320&h=170&q=70" alt="" loading="lazy" />
               </span>
               <span data-split data-i18n="journey.l2">takes you</span>
             </span>
@@ -148,11 +152,12 @@
               <g class="van__wheel"><circle cx="190" cy="86" r="16" /><circle cx="190" cy="86" r="5" /><path d="M190 72 V81" /></g>
             </svg>
           </div>
+          </div>
         </div>
 
         <!-- The token photo that grows into the chapter frame (desktop motion only) -->
         <div class="journey__photo media" data-label="services-private.jpg" data-journey-photo aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1729455262359-eaf83834808b?auto=format&fit=crop&w=1400&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1729455262359-eaf83834808b?auto=format&fit=crop&w=1400&q=80" alt="" loading="lazy" />
         </div>
 
         <div class="chapters">
@@ -203,7 +208,10 @@
     <!-- ============ TESTIMONIAL ============ -->
     <section class="testimonial" data-header="dark" data-testimonial>
       <div class="testimonial__frame media media--dark" data-label="testimonial.jpg" data-testimonial-frame>
-        <img src="https://images.unsplash.com/photo-1650755743870-bfb13c6d5ab6?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy" />
+        <picture>
+          <source media="(max-width: 699px)" srcset="https://images.unsplash.com/photo-1650755743870-bfb13c6d5ab6?auto=format&fit=crop&w=828&h=1800&q=70" />
+          <img src="https://images.unsplash.com/photo-1650755743870-bfb13c6d5ab6?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy" />
+        </picture>
         <div class="testimonial__shade" aria-hidden="true"></div>
         <svg class="testimonial__mark" viewBox="0 0 48 32" aria-hidden="true">
           <path d="M3 29 L16 8 L24 20 L31 11 L45 29 Z" pathLength="1" data-testimonial-mark />
@@ -270,7 +278,10 @@
     <section class="winter" id="winter">
       <div class="winter__hero" data-header="dark" data-winter-hero>
         <div class="winter__media media media--dark" data-label="winter-hero" data-winter-media>
-          <img src="https://images.unsplash.com/photo-1755508447985-acb2e9f1b2d0?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy" />
+          <picture>
+            <source media="(max-width: 699px)" srcset="https://images.unsplash.com/photo-1755508447985-acb2e9f1b2d0?auto=format&fit=crop&w=828&h=1800&q=70" />
+            <img src="https://images.unsplash.com/photo-1755508447985-acb2e9f1b2d0?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy" />
+          </picture>
           <div class="winter__shade" aria-hidden="true"></div>
           <div class="winter__content">
             <span class="tag tag--light" data-i18n="winter.tag">Ski · Nature · Culture</span>
@@ -333,11 +344,11 @@
 
         <div class="offer__visual" aria-hidden="true">
           <div class="offer__mask">
-            <div class="offer__img media media--dark" data-label="offer-1.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1733584920255-434068af5156?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" /></div>
-            <div class="offer__img media media--dark" data-label="offer-2.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1728733287961-570ecea608bf?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" /></div>
-            <div class="offer__img media media--dark" data-label="offer-3.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1656772118305-1c1937d1717a?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" /></div>
-            <div class="offer__img media media--dark" data-label="offer-4.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" /></div>
-            <div class="offer__img media media--dark" data-label="offer-5.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1692444780544-e136e1592985?auto=format&fit=crop&w=1600&q=80" alt="" loading="lazy" /></div>
+            <div class="offer__img media media--dark" data-label="offer-1.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1733584920255-434068af5156?auto=format&fit=crop&w=1600&q=80" srcset="https://images.unsplash.com/photo-1733584920255-434068af5156?auto=format&fit=crop&w=828&q=70 828w, https://images.unsplash.com/photo-1733584920255-434068af5156?auto=format&fit=crop&w=1600&q=80 1600w" sizes="(max-width: 899px) 100vw, 52vw" alt="" loading="lazy" /></div>
+            <div class="offer__img media media--dark" data-label="offer-2.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1728733287961-570ecea608bf?auto=format&fit=crop&w=1600&q=80" srcset="https://images.unsplash.com/photo-1728733287961-570ecea608bf?auto=format&fit=crop&w=828&q=70 828w, https://images.unsplash.com/photo-1728733287961-570ecea608bf?auto=format&fit=crop&w=1600&q=80 1600w" sizes="(max-width: 899px) 100vw, 52vw" alt="" loading="lazy" /></div>
+            <div class="offer__img media media--dark" data-label="offer-3.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1656772118305-1c1937d1717a?auto=format&fit=crop&w=1600&q=80" srcset="https://images.unsplash.com/photo-1656772118305-1c1937d1717a?auto=format&fit=crop&w=828&q=70 828w, https://images.unsplash.com/photo-1656772118305-1c1937d1717a?auto=format&fit=crop&w=1600&q=80 1600w" sizes="(max-width: 899px) 100vw, 52vw" alt="" loading="lazy" /></div>
+            <div class="offer__img media media--dark" data-label="offer-4.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1600&q=80" srcset="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=828&q=70 828w, https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1600&q=80 1600w" sizes="(max-width: 899px) 100vw, 52vw" alt="" loading="lazy" /></div>
+            <div class="offer__img media media--dark" data-label="offer-5.jpg" data-offer-img><img src="https://images.unsplash.com/photo-1692444780544-e136e1592985?auto=format&fit=crop&w=1600&q=80" srcset="https://images.unsplash.com/photo-1692444780544-e136e1592985?auto=format&fit=crop&w=828&q=70 828w, https://images.unsplash.com/photo-1692444780544-e136e1592985?auto=format&fit=crop&w=1600&q=80 1600w" sizes="(max-width: 899px) 100vw, 52vw" alt="" loading="lazy" /></div>
           </div>
         </div>
 
@@ -431,7 +442,10 @@
   <!-- ============ FOOTER ============ -->
   <footer class="footer" id="contact" data-header="dark" data-footer>
     <div class="footer__media media media--dark" data-label="footer.jpg" data-footer-media>
-      <img src="https://images.unsplash.com/photo-1561479636-81ee7bd873b0?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy" />
+      <picture>
+        <source media="(max-width: 699px)" srcset="https://images.unsplash.com/photo-1561479636-81ee7bd873b0?auto=format&fit=crop&w=828&h=1800&q=70" />
+        <img src="https://images.unsplash.com/photo-1561479636-81ee7bd873b0?auto=format&fit=crop&w=2000&q=80" alt="" loading="lazy" />
+      </picture>
       <div class="footer__shade" aria-hidden="true"></div>
     </div>
 
@@ -465,6 +479,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============ PHONE BOOKING BAR (direct child of body so nothing can break position: fixed) ============ -->
+  <aside class="book-bar" data-book-bar data-i18n-attr="aria-label:bar.label" aria-label="Book a trip">
+    <a class="btn btn--violet book-bar__wa" href="https://wa.me/355683392743" data-wa="general" target="_blank" rel="noopener">
+      <span data-i18n="bar.whatsapp">Dates &amp; prices on WhatsApp</span> <span aria-hidden="true">↗</span>
+    </a>
+    <a class="btn btn--ghost-light book-bar__call" href="tel:+355683392743" data-i18n="bar.call">Call</a>
+  </aside>
 
   <script type="module" src="/src/main.js"></script>
 </body>

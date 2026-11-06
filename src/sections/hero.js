@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { q } from '../lib/dom.js';
 
-export function initHero() {
+export function initHero(desktop) {
   const hero = q('.hero');
 
   // Intro: headline lines rise out of their masks.
@@ -10,9 +10,12 @@ export function initHero() {
 
   // On scroll: the bottom edge curves into the cream canvas, media drifts.
   const st = { trigger: hero, start: 'top top', end: 'bottom top', scrub: true };
-  gsap.fromTo(hero,
-    { clipPath: 'inset(0% 0% 0% 0% round 0% 0% 0% 0% / 0px 0px 0px 0px)' },
-    { clipPath: 'inset(0% 0% 0% 0% round 0% 0% 50% 50% / 0px 0px 180px 180px)', ease: 'none', scrollTrigger: st });
+  // Desktop only: scrubbing clip-path repaints the whole photo on every scroll frame.
+  if (desktop) {
+    gsap.fromTo(hero,
+      { clipPath: 'inset(0% 0% 0% 0% round 0% 0% 0% 0% / 0px 0px 0px 0px)' },
+      { clipPath: 'inset(0% 0% 0% 0% round 0% 0% 50% 50% / 0px 0px 180px 180px)', ease: 'none', scrollTrigger: st });
+  }
   gsap.to('.hero__media', { yPercent: 18, scale: 1.08, ease: 'none', scrollTrigger: { ...st } });
   gsap.to('.hero__content', { y: -80, opacity: 0, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: '60% top', scrub: true } });
 }

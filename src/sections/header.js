@@ -32,6 +32,7 @@ export function initHeader(lenis) {
 
   const setMenu = (open) => {
     header.classList.toggle('menu-open', open);
+    document.body.classList.toggle('menu-is-open', open);
     burger.setAttribute('aria-expanded', String(open));
     menu.hidden = !open;
     if (lenis) open ? lenis.stop() : lenis.start();

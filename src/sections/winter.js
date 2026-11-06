@@ -1,15 +1,20 @@
 import gsap from 'gsap';
 import { q } from '../lib/dom.js';
 
-export function initWinter() {
+export function initWinter(desktop) {
   const hero = q('[data-winter-hero]');
   const media = q('[data-winter-media]', hero);
 
-  // Inset panel expands to full-bleed.
-  gsap.fromTo(media,
-    { clipPath: 'inset(10% 8% 10% 8% round 20px)' },
-    { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none',
-      scrollTrigger: { trigger: hero, start: 'top bottom', end: 'top top', scrub: true } });
+  // Desktop: inset panel expands to full-bleed. Phones: full-bleed throughout, photo scales with scroll.
+  if (desktop) {
+    gsap.fromTo(media,
+      { clipPath: 'inset(10% 8% 10% 8% round 20px)' },
+      { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none',
+        scrollTrigger: { trigger: hero, start: 'top bottom', end: 'top top', scrub: true } });
+  } else {
+    gsap.fromTo(q('img', media), { scale: 1.18 }, { scale: 1, ease: 'none',
+      scrollTrigger: { trigger: hero, start: 'top bottom', end: 'bottom top', scrub: true } });
+  }
 
   // Headline revealed line by line, then supporting copy.
   const tl = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top 35%', toggleActions: 'play none none reverse' } });

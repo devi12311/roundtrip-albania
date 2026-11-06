@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { q, qa, stepper } from '../lib/dom.js';
 
 // Mountain silhouettes for the image mask (objectBoundingBox units, same point count so they morph).
@@ -38,4 +39,31 @@ export function initOffer() {
     times.push(t + 0.25);
   });
   tl.to({}, { duration: 0.5 });
+}
+
+// Phone: the masked visual is held by CSS sticky above the list. Each item swaps the photo as it
+// reaches the reading line, on a short timed tween: scrubbing the clip path would repaint every frame.
+export function initOfferPhone() {
+  const section = q('.offer');
+  const items = qa('[data-offer-item]', section);
+  const imgs = qa('[data-offer-img]', section);
+  const clip = q('[data-offer-clip]', section);
+  let current = 0;
+
+  gsap.set(imgs.slice(1), { autoAlpha: 0 });
+  items[0].classList.add('is-active');
+
+  const show = (i) => {
+    if (i === current) return;
+    gsap.to(imgs[current], { autoAlpha: 0, duration: 0.5, overwrite: true });
+    gsap.to(imgs[i], { autoAlpha: 1, duration: 0.5, overwrite: true });
+    gsap.to(clip, { attr: { d: SHAPES[i % 2] }, duration: 0.6, ease: 'power2.inOut', overwrite: true });
+    items.forEach((it, n) => it.classList.toggle('is-active', n === i));
+    current = i;
+  };
+
+  items.forEach((it, i) => ScrollTrigger.create({
+    trigger: it, start: 'top 62%', end: 'bottom 62%',
+    onEnter: () => show(i), onEnterBack: () => show(i),
+  }));
 }

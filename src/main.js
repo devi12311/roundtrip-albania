@@ -7,12 +7,14 @@ import { initWhatsApp } from './lib/whatsapp.js';
 import { initHeader } from './sections/header.js';
 import { initHero } from './sections/hero.js';
 import { initJourney } from './sections/journey.js';
+import { initJourneyPhone } from './sections/journey-phone.js';
 import { initTestimonial } from './sections/testimonial.js';
 import { initDestinations } from './sections/destinations.js';
 import { initWinter } from './sections/winter.js';
-import { initOffer } from './sections/offer.js';
+import { initOffer, initOfferPhone } from './sections/offer.js';
 import { initFooter } from './sections/footer.js';
 import { initReveals } from './sections/reveals.js';
+import { initBookBar } from './sections/bookbar.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,17 +36,20 @@ async function boot() {
   }
 
   initHeader(lenis);
+  initBookBar();
 
   // Sections are created in page order so pin spacing is measured correctly;
   // matchMedia reverts everything when the layout switches to the static version.
   gsap.matchMedia().add({ motion: MOTION, desktop: MOTION_DESKTOP }, ({ conditions }) => {
     if (!conditions.motion) return;
-    initHero();
+    initHero(conditions.desktop);
     if (conditions.desktop) initJourney();
+    else initJourneyPhone();
     initTestimonial();
     if (conditions.desktop) initDestinations();
-    initWinter();
+    initWinter(conditions.desktop);
     if (conditions.desktop) initOffer();
+    else initOfferPhone();
     initReveals();
     initFooter();
     ScrollTrigger.sort();

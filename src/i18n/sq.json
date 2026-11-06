@@ -97,5 +97,8 @@
   "footer.callus": "Telefon & WhatsApp",
   "footer.region": "Shqipëri & më tej",
   "wa.general": "Përshëndetje! Dua të rezervoj një udhëtim me Roundtrip Albania.",
-  "wa.winter": "Përshëndetje! Jam i/e interesuar për një tur dimëror në Ballkan."
+  "wa.winter": "Përshëndetje! Jam i/e interesuar për një tur dimëror në Ballkan.",
+  "bar.label": "Rezervo një udhëtim",
+  "bar.whatsapp": "Data dhe çmime në WhatsApp",
+  "bar.call": "Telefono"
 }

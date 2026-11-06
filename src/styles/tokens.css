@@ -61,7 +61,7 @@
   --section-gap: clamp(60px, 10vw, 128px); /* DESIGN.md: 60–128px */
   --card-padding: 24px;
   --element-gap: 24px;
-  --gutter: clamp(16px, 8vw, 120px);
+  --gutter: max(clamp(16px, 8vw, 120px), env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px));
 
   /* Border Radius */
   --radius-2xl: 20px;
@@ -83,6 +83,9 @@
   --fluid-heading-sm: var(--text-heading-sm);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Room to leave for the phone booking bar in full-screen sections */
+  --book-bar-h: calc(64px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Phones: 0.85 leading makes stacked caps touch, so open it up.
